@@ -8,6 +8,25 @@
 </head>
 <body>
     <h1 style="text-align: center; font-size: 5rem;">Digital Library</h1>
+    <div id="newBook">
+        <button style="font-size: 2rem; font-weight: bold; padding: 1rem; border: solid blue 2px;" id="addBook">Add Book</button>
+    </div>
+    <div id="formLayout">
+        <form action="#" method="#" id="myForm">
+            <label for="bookName">Book Title:</label>
+            <input type="text" placeholder="Enter Book Name" id="bookName" required>
+            <label for="authorName">Author Name:</label>
+            <input type="text" placeholder="Enter Author Name" id="authorName" required>
+            <label for="pageNumbers">How Many Pages?</label>
+            <input type="number" placeholder="Enter # of pages" id="pageNumbers" required>
+            <label for="options">Have you read this book?</label>
+            <select name="options" id="options" required>
+                <option value="yes">yes</option>
+                <option value="no">no</option>
+            </select>
+            <button type="submit" style="font-size: 2rem; margin-top: 3rem; height: 5vh;" id="submitBtn">Submit</button>
+        </form>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
