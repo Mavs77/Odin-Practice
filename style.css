@@ -19,6 +19,10 @@
     margin-top: 5rem;
   }
 
+  #newBook {
+    gap: 0.5rem;
+  }
+
   /* Form styling */
 
   #formLayout {
@@ -49,4 +53,28 @@
     font-size: 2rem;
     text-align: center;
     padding: 0.2rem;
+  }
+
+  /* Library */
+
+  #bookShelf {
+    border: solid 2px black;
+    margin-top: 1rem;
+    height: 50vh;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    /* default is hidden */
+    display: none; 
+    /* responsive columns */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .card {
+    border: 1px solid black;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
