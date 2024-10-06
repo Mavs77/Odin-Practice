@@ -74,7 +74,7 @@ function renderLibrary() {
     //clear the container before re-rendering
     container.innerHTML = ''; 
 
-    myLibrary.forEach(item => {
+    myLibrary.forEach((item, index) => {
         //create a new div for the card
         const card = document.createElement('div'); 
         card.classList.add('card'); //add a class for styling purposes
@@ -89,11 +89,22 @@ function renderLibrary() {
         pages.textContent = `Number of pages: ${item.pages}`
         read.textContent = `Have you already read this book? ${item.read}`
 
+        //create delete button
+        const deleteButton = document.createElement('button'); 
+        deleteButton.textContent = 'Delete'
+        deleteButton.classList.add('delete-button'); //optional styling class
+
+        //add click event to delete button 
+        deleteButton.addEventListener('click', () => {
+            deleteItem(index); //Pass the index of the item to delete
+        })
+
         //append content to the card
         card.appendChild(title); 
         card.appendChild(author); 
         card.appendChild(pages); 
         card.appendChild(read); 
+        card.appendChild(deleteButton);
 
         //append the card to the container
         container.appendChild(card); 
@@ -103,3 +114,12 @@ function renderLibrary() {
 const showLibrary = document.getElementById('showLibrary'); 
 
 showLibrary.addEventListener('click', renderLibrary)
+
+// Function to delete an item from the library
+function deleteItem(index) {
+    // Remove the item from the array
+    myLibrary.splice(index, 1); // Remove the item at the given index
+
+    // Re-render the library to update the display
+    renderLibrary();
+}
